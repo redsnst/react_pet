@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { auth } from "../base";
+import { auth } from "../utils/base";
 
 
 function Welcome() {
@@ -29,7 +29,7 @@ function Welcome() {
                 <h1 className=" p-4 text-2xl font-bold ">Schedule of Events</h1>
                 <p className=" p-4 ">This application is a calendar in which you can mark upcoming events and view those that have already happened!</p>
                 { isLogged && 
-                    <NavLink to='/'>
+                    <NavLink to='/schedule'>
                         <button className="bg-white hover:bg-gray-100 text-black py-2 px-4 text-left w-full text-xl">
                             GO TO SCHEDULE
                         </button>

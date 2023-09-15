@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { auth } from "../../base";
+import { auth } from "../../utils/base";
 import { useEffect, useState } from "react";
 
 function SideBar() {
@@ -50,7 +50,7 @@ function SideBar() {
                 }
                 {isLogged && 
                     <>
-                        <NavLink to='/'>
+                        <NavLink to='/schedule'>
                             <button className="bg-white hover:bg-gray-100 text-black py-2 px-4 text-left w-full">
                                 Schedule
                             </button>

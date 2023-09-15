@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { auth } from "./../base";
+import { auth } from "../utils/base";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -21,9 +21,9 @@ const Signup = () => {
   };
 
   return (
-    <div className='h-full flex bg-gray-bg1'>
-        <div className='w-full max-w-md m-auto bg-white rounded-lg border border-primaryBorder shadow-default py-10 px-16'>
-            <h1 className='text-2xl font-medium text-primary mt-4 mb-12 text-center'>
+    <div className='h-full flex'>
+        <div className='w-full max-w-md m-auto bg-white rounded-lg border  py-10 px-16'>
+            <h1 className='text-2xl font-medium mt-4 mb-12 text-center'>
                 Register an account🔐
             </h1>
         <form className="mt-3 pt-3 pb-3">
@@ -32,29 +32,29 @@ const Signup = () => {
               {notice}
             </div>
           )}
-          <div className="form-floating mb-3">
+          <div className="mb-3">
             <input
               type="email"
-              className="w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4"
+              className="w-full p-2 border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4"
               aria-describedby="emailHelp"
               placeholder="name@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             ></input>
           </div>
-          <div className="form-floating mb-3">
+          <div className="mb-3">
             <input
-            className="w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4"
+            className="w-full p-2 border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4"
               type="password"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             ></input>
           </div>
-          <div className="d-grid">
+          <div>
             <button
               type="submit"
-              className=" bg-green-500 py-2 px-4 text-sm text-white rounded border border-green focus:outline-none focus:border-green-dark"
+              className=" bg-green-500 py-2 px-4 text-sm text-white rounded border focus:outline-none"
               onClick={(e) => signupWithUsernameAndPassword(e)}
             >
               Signup
