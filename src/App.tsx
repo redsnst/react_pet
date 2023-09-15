@@ -1,25 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
+import AppBody from './components/body/body';
+import Header from './components/header/header';
+import SideBar from './components/side-bar/side-bar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className='flex items-start'>
+        <div className="max-w-sm h-screen">
+          <SideBar />
+        </div>
+        <div className='flex flex-col w-full h-screen'>
+          <Header />
+          <AppBody />
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
